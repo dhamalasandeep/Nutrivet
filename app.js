@@ -60,6 +60,8 @@ function getLifeStageInfo(species, ageYears) {
 
 const species = document.getElementById("species");
 const dietType = document.getElementById("dietType");
+const feedBrandBox =
+document.getElementById("feedBrandBox");
 const sex =
 document.getElementById("sex");
 
@@ -136,15 +138,33 @@ if (species.value === "Cat") {
 }
 
 
+
 }
 
 species.addEventListener("change", updateDietOptions);
 
 updateDietOptions();
+dietType.addEventListener(
+    "change",
+    updateFeedBrandVisibility
+);
+
+updateFeedBrandVisibility();
 species.addEventListener(
     "change",
     updatePetImage
 );
+function updateFeedBrandVisibility() {
+
+    if (dietType.value === "Commercial Feed") {
+        feedBrandBox.style.display = "block";
+    }
+
+    else {
+        feedBrandBox.style.display = "none";
+    }
+
+}
 
 const breed = document.getElementById("breed");
 
@@ -201,8 +221,30 @@ const bcs =
 document.getElementById("bcs").value;
 const dietType =
 document.getElementById("dietType").value;
+const feedBrandElement =
+document.getElementById("feedBrand");
+if (feedBrand === "Pedigree")
+    kcalPerGram = 3.5;
+
+if (feedBrand === "Drools")
+    kcalPerGram = 3.8;
+
+if (feedBrand === "Royal Canin")
+    kcalPerGram = 4.0;
+
+if (feedBrand === "Farmina")
+    kcalPerGram = 4.1;
+
+if (feedBrand === "Whiskas")
+    kcalPerGram = 3.7;
+
+if (feedBrand === "Me-O")
+    kcalPerGram = 3.8;
+
 
 const reproductive = document.getElementById("reproductive").value;
+let kcalPerGram = 3.5;
+
 
 const rer = calculateRER(weight);
 let stage = "Adult";
@@ -464,7 +506,7 @@ if (breed.value === "Maine Coon") {
     breedNote = "Monitor growth and cardiac health.";
 }
     
-if (breed.value === "Indian Domestic Cat") {
+if (breed.value === "Indian Domestic cat") {
     breedNote =
     "Generally hardy and adaptable. Maintain balanced nutrition, vaccination and parasite control.";
 }
@@ -657,7 +699,7 @@ Psyllium Husk (Optional): 2-5 g/day
 }
 if (dietType === "Commercial Feed") {
 
-    const feed = Math.round(mer / 3.5);
+    const feed = Math.round(mer / kcalPerGram);
 
     if (feedingFrequency === "4 meals/day") {
 

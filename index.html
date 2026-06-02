@@ -39,7 +39,7 @@ width="150">
 
         <h2>Pet Details</h2>
 
-        ...
+    
 
 <div class="card">
 
@@ -105,8 +105,24 @@ width="150">
     <option>Chicken Based</option>
     <option>Fish Based</option>
     <option>Egg Based</option>
-    <option value="Vegetarian"> Vegetarian (Dogs Only) </option>
-    <option>Commercial Feed</option>
+    <option value="Vegetarian"> Vegetarian (Dogs Only) </option> 
+    <option value="Commercial Feed">Commercial Feed</option>
+</select>
+<div id="feedBrandBox" style="display:none;">
+
+<label>Feed Brand</label>
+
+<select id="feedBrand">
+    <option value="Pedigree">Pedigree</option>
+    <option value="Drools">Drools</option>
+    <option value="Royal Canin">Royal Canin</option>
+    <option value="Farmina">Farmina</option>
+    <option value="Whiskas">Whiskas</option>
+    <option value="Me-O">Me-O</option>
+</select>
+
+</div>
+
 </select>
 
     <button onclick="generatePlan()">
@@ -134,16 +150,7 @@ width="150">
        Connect on LinkedIn
     </a>
 </section>
-<div class="result-card">
-    <h3>Life Stage</h3>
-    <p id="lifeStage"></p>
 
-    <h3>Recommended Feeding Frequency</h3>
-    <p id="feedingFrequency"></p>
-
-    <h3>Stage Recommendation</h3>
-    <p id="stageRecommendation"></p>
-</div>
 
 
 </div>
