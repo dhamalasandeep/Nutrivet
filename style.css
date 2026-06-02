@@ -149,3 +149,33 @@ footer{
     margin-top:0;
     color:#1E4E8C;
 }
+.developer-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.developer-section h2 {
+    margin-bottom: 15px;
+}
+
+.developer-section p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.linkedin-btn:hover {
+    opacity: 0.9;
+}
