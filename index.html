@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriVet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="hero">
+        
+
+        <h1>🐾 NutriVet</h1>
+        <p>
+           Professional Veterinary Nutrition Planner
+        </p>
+        <img id="petImage"
+src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+width="150">
+
+         <p>
+          RER • MER • Clinical Nutrition • PDF Reports
+          </p>
+
+
+        <button onclick="scrollToCalculator()">
+        Start Nutrition Assessment
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Pet Details</h2>
+
+        ...
+
+<div class="card">
+
+    <h2>Pet Details</h2>
+
+    <label>Species</label>
+    <select id="species">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+    </select>
+
+    <label>Breed</label>
+    <select id="breed"></select>
+
+    <label>Age (Years)</label>
+    <input type="number" id="age" step="0.1">
+
+    <label>Weight (kg)</label>
+    <input type="number" id="weight" step="0.1">
+
+    <label>Sex</label>
+    <select id="sex">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+    <div id="reproBox">
+        <label>Reproductive Status</label>
+        <select id="reproductive">
+            <option>Intact</option>
+            <option>Neutered</option>
+            <option>Spayed</option>
+            <option>Pregnant</option>
+            <option>Lactating</option>
+        </select>
+    </div>
+
+    <label>Activity Level</label>
+    <select id="activity">
+        <option>Low</option>
+        <option>Moderate</option>
+        <option>High</option>
+    </select>
+
+    <label>Health Status</label>
+    <select id="health">
+        <option>Healthy</option>
+        <option>Weight Loss</option>
+        <option>Weight Gain</option>
+        <option>CKD</option>
+        <option>Liver Disease</option>
+    </select>
+    <label>Body Condition Score</label>
+
+<select id="bcs">
+    <option>Underweight</option>
+    <option>Ideal</option>
+    <option>Overweight</option>
+    <option>Obese</option>
+</select>
+    <label>Diet Type</label>
+<select id="dietType">
+    <option>Chicken Based</option>
+    <option>Fish Based</option>
+    <option>Egg Based</option>
+    <option value="Vegetarian"> Vegetarian (Dogs Only) </option>
+    <option>Commercial Feed</option>
+</select>
+
+    <button onclick="generatePlan()">
+        Generate Nutrition Plan
+    </button>
+
+</div>
+
+<div id="results"></div>
+<button onclick="downloadPDF()" id="pdfBtn">
+    📄 Download PDF Report
+</button>
+
+
+</div>
+<div class="references">
+
+<h3>📚 Nutrition References</h3>
+
+<ul>
+<li>NRC Nutrient Requirements of Dogs and Cats</li>
+<li>AAFCO Dog & Cat Food Nutrient Profiles</li>
+<li>FEDIAF Nutritional Guidelines for Cats and Dogs</li>
+</ul>
+
+</div>
+<p class="disclaimer">
+Educational veterinary nutrition planning tool.
+Not a substitute for professional veterinary consultation.
+</p>
+<footer>
+    NutriVet v1.0 | Developed by Sandeep Dhamala
+</footer>
+
+<script src="data.js"></script>
+
+<script src="nutrition.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+</html>
+
+
+
+    
