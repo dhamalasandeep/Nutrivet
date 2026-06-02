@@ -1,4 +1,63 @@
 
+function getLifeStageInfo(species, ageYears) {
+
+    if (species === "Dog") {
+
+        if (ageYears < 1) {
+            return {
+                stage: "Puppy",
+                meals: "3–4 meals/day",
+                recommendation:
+                    "Growth phase. Feed a high-quality puppy diet rich in protein, energy, calcium and phosphorus."
+            };
+        }
+
+        if (ageYears <= 7) {
+            return {
+                stage: "Adult Dog",
+                meals: "2 meals/day",
+                recommendation:
+                    "Maintain a balanced diet and regular exercise routine."
+            };
+        }
+
+        return {
+            stage: "Senior Dog",
+            meals: "2 meals/day",
+            recommendation:
+                "Monitor body weight and joint health. Senior diets may be beneficial."
+            };
+    }
+
+    if (species === "Cat") {
+
+        if (ageYears < 1) {
+            return {
+                stage: "Kitten",
+                meals: "3–4 meals/day",
+                recommendation:
+                    "Growth phase. Feed a nutrient-dense kitten diet with adequate protein."
+            };
+        }
+
+        if (ageYears <= 10) {
+            return {
+                stage: "Adult Cat",
+                meals: "2 meals/day",
+                recommendation:
+                    "Provide a balanced diet and adequate hydration."
+            };
+        }
+
+        return {
+            stage: "Senior Cat",
+            meals: "2 meals/day",
+            recommendation:
+                "Monitor kidney health, hydration and body condition regularly."
+            };
+    }
+}
+
 const species = document.getElementById("species");
 const dietType = document.getElementById("dietType");
 const sex =
@@ -217,6 +276,7 @@ if (activity === "Moderate") {
 if (activity === "High") {
     mer = mer * 1.2;
 }
+
 const breedModifier =
 breedModifiers[breed.value] || 1.0;
 
@@ -484,6 +544,23 @@ let dietPlan = "";
 
 if (dietType === "Chicken Based") {
 
+if (species.value === "Cat") {
+
+dietPlan = `
+Chicken: ${Math.round(weight * 12)} g/day<br>
+Commercial Cat Food (Optional): ${Math.round(weight * 5)} g/day<br>
+
+<hr>
+
+<b>Optional Foods</b><br>
+Pumpkin: ${Math.round(weight)} g/day<br>
+Curd: ${Math.round(weight)} g/day<br>
+Rice: ${Math.round(weight)} g/day<br>
+
+⚠ Cats are obligate carnivores. Optional foods should not replace animal protein.
+`;
+
+} else {
 
 dietPlan = `
 Chicken: ${Math.round(weight * 10)} g/day<br>
@@ -493,11 +570,28 @@ Pumpkin: ${Math.round(weight * 2)} g/day<br>
 Fish Oil (Optional): 5 ml/day
 `;
 
+}
 
 }
 
 if (dietType === "Fish Based") {
 
+if (species.value === "Cat") {
+
+dietPlan = `
+Fish: ${Math.round(weight * 12)} g/day<br>
+
+<hr>
+
+<b>Optional Foods</b><br>
+Pumpkin: ${Math.round(weight)} g/day<br>
+Curd: ${Math.round(weight)} g/day<br>
+Rice: ${Math.round(weight)} g/day<br>
+
+⚠ Animal protein should form the major portion of the diet.
+`;
+
+} else {
 
 dietPlan = `
 Fish: ${Math.round(weight * 10)} g/day<br>
@@ -506,11 +600,28 @@ Curd: ${Math.round(weight * 3)} g/day<br>
 Fish Oil (Optional): 5 ml/day
 `;
 
+}
 
 }
 
 if (dietType === "Egg Based") {
 
+if (species.value === "Cat") {
+
+dietPlan = `
+Eggs: ${Math.max(1, Math.round(weight / 4))}/day<br>
+
+<hr>
+
+<b>Optional Foods</b><br>
+Pumpkin: ${Math.round(weight)} g/day<br>
+Curd: ${Math.round(weight)} g/day<br>
+Rice: ${Math.round(weight)} g/day<br>
+
+⚠ Eggs should be cooked before feeding.
+`;
+
+} else {
 
 dietPlan = `
 Eggs: ${Math.max(1, Math.round(weight / 5))}/day<br>
@@ -519,6 +630,7 @@ Curd: ${Math.round(weight * 3)} g/day<br>
 Pumpkin: ${Math.round(weight * 2)} g/day
 `;
 
+}
 
 }
 
@@ -607,6 +719,9 @@ font-weight:bold;
         <p><b>Generated On:</b> ${today}</p>
         <p><b>Breed:</b> ${breed.value}</p>
         <p><b>Life Stage:</b> ${stage}</p>
+        <p><b>Recommended Meals:</b> ${getLifeStageInfo(species.value, age).meals}</p>
+
+<p><b>Stage Advice:</b> ${getLifeStageInfo(species.value, age).recommendation}</p>
         <p><b>Age:</b> ${age}</p>
         <p><b>Debug Feeding:</b> ${feedingFrequency}</p>
         <p><b>Sex:</b> ${sex}</p>

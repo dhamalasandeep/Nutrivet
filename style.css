@@ -179,3 +179,9 @@ footer{
 .linkedin-btn:hover {
     opacity: 0.9;
 }
+#lifeStage,
+#feedingFrequency,
+#stageRecommendation {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
