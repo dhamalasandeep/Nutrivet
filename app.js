@@ -281,11 +281,11 @@ const breedModifier =
 breedModifiers[breed.value] || 1.0;
 
 mer = mer * breedModifier;
-if (health === "Weight Loss") {
+if (health === "Weight Loss required") {
 mer = mer * 0.85;
 }
 
-if (health === "Weight Gain") {
+if (health === "Weight Gain required") {
 mer = mer * 1.15;
 }
 
@@ -419,12 +419,14 @@ if (health === "Liver Disease") {
 healthNote = "Highly digestible protein and frequent feeding recommended.Acute diffuse liver disease: High carbohydrate diet with high biological value protein recommended. Chronic diffuse liver disease: Avoid high fat and high protein diets; provide moderate highly digestible protein.";
 }
 
-if (health === "Weight Loss") {
-healthNote = "Calorie restriction and increased fiber recommended.";
+if (health === "Weight Loss required") {
+healthNote =
+"Goal: Controlled weight reduction. Calorie restriction and regular exercise recommended.";
 }
 
-if (health === "Weight Gain") {
-healthNote = "Higher calorie density diet recommended.";
+if (health === "Weight Gain required") {
+healthNote =
+"Goal: Healthy weight gain. Higher calorie density diet and regular weight monitoring recommended.";
 }
 let speciesNote = "";
 
@@ -473,14 +475,14 @@ if (health === "Liver Disease") {
     "Provide highly digestible diet. Monitor liver parameters and avoid excessive fat intake.";
 }
 
-if (health === "Weight Loss") {
-    clinicalAlert =
-    "Calorie restriction and regular body weight monitoring advised.";
+if (health === "Weight Loss Required") {
+healthNote =
+"Goal: Controlled weight reduction. Calorie restriction and regular exercise recommended.";
 }
 
-if (health === "Weight Gain") {
-    clinicalAlert =
-    "Increase calorie intake gradually and monitor body condition.";
+if (health === "Weight Gain Required") {
+healthNote =
+"Goal: Healthy weight gain. Higher calorie density diet and regular weight monitoring recommended.";
 }
 
 if (health === "Healthy") {
