@@ -19,7 +19,7 @@ const catBreeds = [
 "Bengal",
 "Maine Coon",
 "British Shorthair",
-"Domestic Shorthair"
+"Indian Domestic cat"
 ];
 const breedModifiers = {
 "Labrador Retriever": 0.95,
@@ -41,7 +41,7 @@ const breedModifiers = {
 "Bengal": 1.10,
 "Maine Coon": 1.15,
 "British Shorthair": 0.95,
-"Domestic Shorthair": 1.00
+"Indian Domestic cat": 1.00
 
 
 }

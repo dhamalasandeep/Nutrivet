@@ -463,6 +463,12 @@ if (breed.value === "Persian") {
 if (breed.value === "Maine Coon") {
     breedNote = "Monitor growth and cardiac health.";
 }
+    
+if (breed.value === "Indian Domestic Cat") {
+    breedNote =
+    "Generally hardy and adaptable. Maintain balanced nutrition, vaccination and parasite control.";
+}
+
 let clinicalAlert = "";
 
 if (health === "CKD") {
@@ -511,11 +517,11 @@ if (health === "Liver Disease") {
     nutritionScore -= 15;
 }
 
-if (health === "Weight Loss") {
+if (health === "Weight Loss required") {
     nutritionScore -= 10;
 }
 
-if (health === "Weight Gain") {
+if (health === "Weight Gain required") {
     nutritionScore -= 5;
 }
 let bcsNote = "";
