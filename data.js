@@ -45,3 +45,26 @@ const breedModifiers = {
 
 
 }
+const breedWeightRanges = {
+
+"Labrador Retriever": { min: 25, max: 36 },
+"German Shepherd": { min: 22, max: 40 },
+"Golden Retriever": { min: 25, max: 34 },
+"Doberman": { min: 27, max: 45 },
+"Beagle": { min: 9, max: 14 },
+"Pug": { min: 6, max: 10 },
+"Rottweiler": { min: 35, max: 60 },
+"Siberian Husky": { min: 16, max: 27 },
+"Shih Tzu": { min: 4, max: 8 },
+"Boxer": { min: 25, max: 36 },
+"Great Dane": { min: 45, max: 90 },
+"Indie": { min: 12, max: 30 },
+
+"Persian": { min: 3, max: 5.5 },
+"Siamese": { min: 3, max: 6 },
+"Bengal": { min: 3.5, max: 7 },
+"Maine Coon": { min: 4.5, max: 11 },
+"British Shorthair": { min: 4, max: 8 },
+"Indian Domestic cat": { min: 3, max: 6 }
+
+}

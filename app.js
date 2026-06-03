@@ -156,12 +156,38 @@ species.addEventListener(
 );
 function updateFeedBrandVisibility() {
 
-    if (dietType.value === "Commercial Feed") {
-        feedBrandBox.style.display = "block";
+    const feedBrand =
+    document.getElementById("feedBrand");
+
+    if (dietType.value !== "Commercial Feed") {
+
+        feedBrandBox.style.display = "none";
+        return;
+
+    }
+
+    feedBrandBox.style.display = "block";
+
+    if (species.value === "Dog") {
+
+        feedBrand.innerHTML = `
+        <option value="Pedigree">Pedigree</option>
+        <option value="Drools">Drools</option>
+        <option value="Royal Canin">Royal Canin</option>
+        <option value="Farmina">Farmina</option>
+        `;
+
     }
 
     else {
-        feedBrandBox.style.display = "none";
+
+        feedBrand.innerHTML = `
+        <option value="Whiskas">Whiskas</option>
+        <option value="Me-O">Me-O</option>
+        <option value="Royal Canin Cat">Royal Canin Cat</option>
+        <option value="Farmina Cat">Farmina Cat</option>
+        `;
+
     }
 
 }
@@ -191,6 +217,10 @@ list.forEach(item => {
 }
 
 species.addEventListener("change", loadBreeds);
+species.addEventListener(
+    "change",
+    updateFeedBrandVisibility
+);
 
 loadBreeds();
 updatePetImage();
@@ -213,6 +243,36 @@ if (!weight) {
     alert("Enter weight");
     return;
 }
+if (species.value ==="cat")
+if (age < 0 || age > 20) {
+    alert("Please enter a valid age (0–20 years)");
+    return;
+}
+
+if (species.value ==="dog")
+if (age < 0 || age > 25) {
+    alert("Please enter a valid age (0–25 years)");
+    return;
+}
+
+
+if (species.value === "Dog") {
+
+    if (weight < 0.5 || weight > 110) {
+        alert("Dog weight must be between 0.5 and 110 kg");
+        return;
+    }
+
+}
+
+if (species.value === "Cat") {
+
+    if (weight < 0.2 || weight > 15) {
+        alert("Cat weight must be between 0.2 and 15 kg");
+        return;
+    }
+
+}
 
 const sex = document.getElementById("sex").value;
 const activity = document.getElementById("activity").value;
@@ -223,6 +283,12 @@ const dietType =
 document.getElementById("dietType").value;
 const feedBrandElement =
 document.getElementById("feedBrand");
+
+const feedBrand =
+feedBrandElement ? feedBrandElement.value : "Pedigree";
+
+let kcalPerGram = 3.5;
+
 if (feedBrand === "Pedigree")
     kcalPerGram = 3.5;
 
@@ -241,9 +307,8 @@ if (feedBrand === "Whiskas")
 if (feedBrand === "Me-O")
     kcalPerGram = 3.8;
 
-
 const reproductive = document.getElementById("reproductive").value;
-let kcalPerGram = 3.5;
+
 
 
 const rer = calculateRER(weight);
@@ -480,6 +545,45 @@ speciesNote =
 
 
 }
+let breedWeightWarning = "";
+
+if (age >= 1) {
+
+    const range =
+    breedWeightRanges[breed.value];
+
+    if (range) {
+
+        if (weight < range.min) {
+
+            breedWeightWarning =
+            `⚠ Typical adult weight range for ${breed.value} is ${range.min}-${range.max} kg. Current weight appears below the typical range.`;
+
+        }
+
+        else if (weight > range.max) {
+
+            breedWeightWarning =
+            `⚠ Typical adult weight range for ${breed.value} is ${range.min}-${range.max} kg. Current weight appears above the typical range.`;
+
+        }
+
+        else {
+
+            breedWeightWarning =
+            `✅ Weight falls within the typical adult breed range (${range.min}-${range.max} kg).`;
+
+        }
+
+    }
+
+}
+else {
+
+    breedWeightWarning =
+    "🐾 Weight assessment is not available for puppies and kittens due to growth-related variation.";
+
+}
 let breedNote = "";
 
 if (breed.value === "Labrador Retriever") {
@@ -700,6 +804,8 @@ Psyllium Husk (Optional): 2-5 g/day
 if (dietType === "Commercial Feed") {
 
     const feed = Math.round(mer / kcalPerGram);
+    const monthlyFeed =
+((feed * 30) / 1000).toFixed(1);
 
     if (feedingFrequency === "4 meals/day") {
 
@@ -737,13 +843,15 @@ if (dietType === "Commercial Feed") {
 
         dietPlan = `
         Commercial Feed: ${feed} g/day<br>
+        Brand: ${feedBrand}<br>
+Monthly Feed Requirement: ${monthlyFeed} kg/month<br>
         Morning Feeding: ${morning} g<br>
         Evening Feeding: ${evening} g<br>
         Water: ${water} ml/day
         `;
 
     }
-
+   
 }
 
 
@@ -801,6 +909,7 @@ font-weight:bold;
 <p>${dietPlan}</p>
 <p><b>Species Note:</b> ${speciesNote}</p>
 <p><b>Breed Note:</b> ${breedNote}</p>
+<p><b>Breed Weight Assessment:</b> ${breedWeightWarning}</p>
 <hr>
 
 <h3>🩺 Clinical Alert</h3>
