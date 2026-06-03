@@ -29,19 +29,74 @@ width="150">
           </p>
 
 
-        <button onclick="scrollToCalculator()">
-        Start Nutrition Assessment
-        </button>
+        
+
+    </div>
+    <div class="dashboard">
+
+    <div class="feature-card"
+         onclick="openNutrition()">
+
+        <h3>🥗 Pet Food Requirement</h3>
+
+        <p>
+        Diet Planning • RER • MER • Feed Calculator
+        </p>
+        <p class="start-link">
+            ▶ Start Food Assessment
+         </p>
 
     </div>
 
-    <div class="card">
+    <div class="feature-card">
 
-        <h2>Pet Details</h2>
+        <h3>👨‍⚕️ Veterinary Consultation</h3>
+
+        <p class="start-link">
+    Coming Soon
+    </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <h3>🏠 Pet Adoption</h3>
+
+        <p class="start-link">
+    Coming Soon
+    </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <h3>💊 Veterinary Calculators</h3>
+<p class="start-link">
+    Coming Soon
+    </p>
+        
+
+    </div>
+    <div class="feature-card">
+
+    <h3>💉 Deworming & Vaccination</h3>
+
+    <p>
+    Puppy • Kitten • Adult Schedules
+    </p>
+
+    <p class="start-link">
+    Coming Soon
+    </p>
+
+</div>
+
+</div>
 
     
 
-<div class="card">
+<div class="card" id="nutritionSection"
+     style="display:none;">
 
     <h2>Pet Details</h2>
 
@@ -55,10 +110,10 @@ width="150">
     <select id="breed"></select>
 
     <label>Age (Years)</label>
-    <input type="number" id="age" step="0.1" min="0" max="30" required>
+    <input type="number" id="age" step="0.1" min="0" max="25" required>
 
     <label>Weight (kg)</label>
-    <input type="number" id="weight" step="0.1" min="0.3" max="120" required>
+    <input type="number" id="weight" step="0.1" min="0.3" max="110" required>
 
     <label>Sex</label>
     <select id="sex">

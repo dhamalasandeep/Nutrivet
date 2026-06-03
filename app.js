@@ -238,6 +238,10 @@ function generatePlan ()
 
 const weight = parseFloat(document.getElementById("weight").value);
 const age = parseFloat(document.getElementById("age").value);
+if (isNaN(age) || age <= 0) {
+    alert("Please enter a valid age");
+    return;
+}
 
 if (!weight) {
     alert("Enter weight");
@@ -950,6 +954,19 @@ doc.save("NutriVet_Report.pdf");
 function scrollToCalculator() {
 
     document.querySelector(".card")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+function openNutrition() {
+
+    document
+    .getElementById("nutritionSection")
+    .style.display = "block";
+
+    document
+    .getElementById("nutritionSection")
     .scrollIntoView({
         behavior: "smooth"
     });
