@@ -931,9 +931,10 @@ font-weight:bold;
 
     </div>
     
+    
 `;
 
-
+document.getElementById("pdfBtn").style.display = "block";
 }
 async function downloadPDF() {
 
