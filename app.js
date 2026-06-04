@@ -998,6 +998,107 @@ function openNutrition() {
     .getElementById("nutritionSection")
     .scrollIntoView({
         behavior: "smooth"
+
     });
+
+}
+
+function openVaccine() {
+
+    document.querySelector(".container").style.display = "none";
+
+    document.getElementById("vaccinePage").style.display = "block";
+
+}
+
+function goHome() {
+
+    document.querySelector(".container").style.display = "block";
+
+    document.getElementById("vaccinePage").style.display = "none";
+
+}
+function showSchedule() {
+
+    const species =
+    document.getElementById("vaccineSpecies").value;
+
+    let html = "";
+
+    if (species === "Dog") {
+
+        html = `
+        <div class="result-card">
+
+        <h3>💉 Dog Vaccination Schedule</h3>
+
+        <p>6–8 Weeks → DHPPi (1st Dose)</p>
+
+        <p>10–12 Weeks → Booster</p>
+
+        <p>14–16 Weeks → Final Booster</p>
+
+        <p>12 Weeks or Older → Rabies</p>
+
+        <hr>
+
+        <h3>🪱 Deworming Schedule</h3>
+
+        <p>0–12 Weeks → Every 2 Weeks</p>
+
+        <p>3–6 Months → Monthly</p>
+
+        <p>Above 6 Months → Every 3 Months</p>
+
+        <hr>
+
+        <p>
+        📚 Based on WSAVA & ESCCAP Guidelines
+        </p>
+
+        </div>
+        `;
+
+    }
+
+    else {
+
+        html = `
+        <div class="result-card">
+
+        <h3>💉 Cat Vaccination Schedule</h3>
+
+        <p>6–8 Weeks → FVRCP (1st Dose)</p>
+
+        <p>10–12 Weeks → Booster</p>
+
+        <p>14–16 Weeks → Final Booster</p>
+
+        <p>12 Weeks or Older → Rabies</p>
+
+        <hr>
+
+        <h3>🪱 Deworming Schedule</h3>
+
+        <p>0–12 Weeks → Every 2 Weeks</p>
+
+        <p>3–6 Months → Monthly</p>
+
+        <p>Above 6 Months → Every 3 Months</p>
+
+        <hr>
+
+        <p>
+        📚 Based on WSAVA & ESCCAP Guidelines
+        </p>
+
+        </div>
+        `;
+
+    }
+
+    document.getElementById(
+        "scheduleResult"
+    ).innerHTML = html;
 
 }

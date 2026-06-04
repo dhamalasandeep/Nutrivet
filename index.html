@@ -9,9 +9,34 @@
 </head>
 
 <body>
+    <div id="vaccinePage" style="display:none;">
+
+    <button onclick="goHome()">⬅ Back</button>
+
+    <div class="card">
+
+        <h2>💉 Vaccination & Deworming Planner</h2>
+
+        <label>Species</label>
+
+        <select id="vaccineSpecies">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+        </select>
+
+        <button onclick="showSchedule()">
+            Show Schedule
+        </button>
+
+        <div id="scheduleResult"></div>
+
+    </div>
+
+</div>
 
 
 <div class="container">
+    
 
     <div class="hero">
         
@@ -21,9 +46,9 @@
            Professional Veterinary Nutrition Planner
         </p>
         <img id="petImage"
-     src="image/hero.png?v=99"
-     alt="NutriVet Logo"
-     width="250">
+     src="image/hero.png"
+     alt="NutriVet Logo">
+
          <p>
           RER • MER • Clinical Nutrition • PDF Reports
           </p>
@@ -48,6 +73,23 @@
          </p>
 
     </div>
+    
+    <div class="feature-card" onclick="openVaccine()">
+
+    <img src="image/vaccine.png" class="card-image">
+
+    <h3>💉 Deworming & Vaccination</h3>
+
+    <p>
+    Puppy • Kitten • Adult Schedules
+    </p>
+
+    <p class="start-link">
+    ▶ Open Planner
+    </p>
+
+
+</div>
 
     <div class="feature-card">
         <img src="image/consultation.png" class="card-image">
@@ -83,20 +125,7 @@
         
 
     </div>
-    <div class="feature-card">
-        <img src="image/vaccine.png" class="card-image">
-
-    <h3>💉 Deworming & Vaccination</h3>
-
-    <p>
-    Puppy • Kitten • Adult Schedules
-    </p>
-
-    <p class="start-link">
-    Coming Soon
-    </p>
-
-</div>
+    
 
 </div>
 
