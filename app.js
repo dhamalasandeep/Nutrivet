@@ -1041,6 +1041,16 @@ function showSchedule() {
         <p>12 Weeks or Older → Rabies</p>
 
         <hr>
+        
+
+<p style="font-size:14px;color:#666;">
+
+📚 Note: Some vaccination protocols may
+include Leptospirosis (DHPPiL) depending on
+geographic location, lifestyle, and veterinary
+recommendations.
+
+</p>
 
         <h3>🪱 Deworming Schedule</h3>
 
