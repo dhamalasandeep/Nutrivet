@@ -489,9 +489,29 @@ if (species.value === "Cat") {
 }
 
 
-const protein = Math.round((mer * 0.25) / 4);
-const fat = Math.round((mer * 0.15) / 9);
-const carbs = Math.round((mer - (protein * 4 + fat * 9)) / 4);
+let protein;
+let fat;
+let carbs;
+
+if (species.value === "Cat") {
+
+    protein = Math.round((mer * 0.50) / 4);
+
+    fat = Math.round((mer * 0.40) / 9);
+
+    carbs = Math.round((mer * 0.10) / 4);
+
+}
+
+else {
+
+    protein = Math.round((mer * 0.25) / 4);
+
+    fat = Math.round((mer * 0.15) / 9);
+
+    carbs = Math.round((mer * 0.60) / 4);
+
+}
 const water = Math.round(weight * 60);
 let hydrationNote = "";
 
@@ -513,6 +533,19 @@ else if (activity === "High") {
 else {
     hydrationNote =
     "Provide clean fresh water at all times.";
+}
+let nrcNote = "";
+
+if (species.value === "Cat") {
+
+    nrcNote =
+    "Cats require a high-protein, low-carbohydrate diet. Animal protein should form the major portion of the diet.";
+
+} else {
+
+    nrcNote =
+    "Dogs require balanced protein, fat and carbohydrate intake according to life stage and activity level.";
+
 }
 const today =
 new Date().toLocaleDateString(); 
@@ -705,17 +738,16 @@ if (dietType === "Chicken Based") {
 if (species.value === "Cat") {
 
 dietPlan = `
-Chicken: ${Math.round(weight * 12)} g/day<br>
-Commercial Cat Food (Optional): ${Math.round(weight * 5)} g/day<br>
+Chicken: ${Math.round(weight * 20)} g/day<br>
+Boiled Egg: ${Math.max(0.5, (weight / 8).toFixed(1))} egg/day<br>
+Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
 
 <hr>
 
 <b>Optional Foods</b><br>
 Pumpkin: ${Math.round(weight)} g/day<br>
-Curd: ${Math.round(weight)} g/day<br>
-Rice: ${Math.round(weight)} g/day<br>
 
-⚠ Cats are obligate carnivores. Optional foods should not replace animal protein.
+⚠ Cats are obligate carnivores. Animal protein should form the major portion of the diet.
 `;
 
 } else {
@@ -737,19 +769,17 @@ if (dietType === "Fish Based") {
 if (species.value === "Cat") {
 
 dietPlan = `
-Fish: ${Math.round(weight * 12)} g/day<br>
+Fish: ${Math.round(weight * 20)} g/day<br>
+Boiled Egg: ${Math.max(0.5, (weight / 8).toFixed(1))} egg/day<br>
+Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
 
 <hr>
 
 <b>Optional Foods</b><br>
 Pumpkin: ${Math.round(weight)} g/day<br>
-Curd: ${Math.round(weight)} g/day<br>
-Rice: ${Math.round(weight)} g/day<br>
 
 ⚠ Animal protein should form the major portion of the diet.
 `;
-
-} else {
 
 dietPlan = `
 Fish: ${Math.round(weight * 10)} g/day<br>
@@ -767,16 +797,16 @@ if (dietType === "Egg Based") {
 if (species.value === "Cat") {
 
 dietPlan = `
-Eggs: ${Math.max(1, Math.round(weight / 4))}/day<br>
+Boiled Eggs: ${Math.max(1, Math.round(weight / 3))}/day<br>
+Chicken: ${Math.round(weight * 8)} g/day<br>
+Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
 
 <hr>
 
 <b>Optional Foods</b><br>
 Pumpkin: ${Math.round(weight)} g/day<br>
-Curd: ${Math.round(weight)} g/day<br>
-Rice: ${Math.round(weight)} g/day<br>
 
-⚠ Eggs should be cooked before feeding.
+⚠ Eggs should always be cooked before feeding.
 `;
 
 } else {
@@ -903,6 +933,15 @@ font-weight:bold;
         <p><b>Protein:</b> ${protein} g/day</p>
         <p><b>Fat:</b> ${fat} g/day</p>
         <p><b>Carbohydrates:</b> ${carbs} g/day</p>
+        <hr>
+
+<h3>📚 NRC Nutrition Guidelines</h3>
+
+<p><b>Recommended Protein:</b> ${protein} g/day</p>
+
+<p><b>Recommended Fat:</b> ${fat} g/day</p>
+
+<p><b>NRC Note:</b> ${nrcNote}</p>
         <p><b>Water:</b> ${water} ml/day</p>
         <p><b>💧 Hydration Advice:</b> ${hydrationNote}</p>
         <p><b>Recommendation:</b> ${healthNote}</p>
