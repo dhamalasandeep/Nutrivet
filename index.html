@@ -9,30 +9,70 @@
 </head>
 
 <body>
-    <div id="vaccinePage" style="display:none;">
+    <body>
 
-    <button onclick="goHome()">⬅ Back</button>
+<div id="vaccinePage" style="display:none;">
 
-    <div class="card">
+```
+<button onclick="goHome()">⬅ Back</button>
 
-        <h2>💉 Vaccination & Deworming Planner</h2>
+<div class="card">
 
-        <label>Species</label>
+    <h2>💉 Vaccination & Deworming Planner</h2>
 
-        <select id="vaccineSpecies">
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-        </select>
+    <label>Species</label>
 
-        <button onclick="showSchedule()">
-            Show Schedule
-        </button>
+    <select id="vaccineSpecies">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+    </select>
 
-        <div id="scheduleResult"></div>
+    <button onclick="showSchedule()">
+        Show Schedule
+    </button>
 
-    </div>
+    <div id="scheduleResult"></div>
 
 </div>
+```
+
+</div>
+
+<div id="drugPage" style="display:none;">
+
+```
+<button onclick="goHomeDrug()">
+    ⬅ Back
+</button>
+
+<div class="card">
+
+    <h2>💊 Drug Library</h2>
+
+    <button onclick="showAntibiotics()">
+        🦠 Antibiotics
+    </button>
+
+    <button>
+        🍄 Antifungals
+    </button>
+
+    <button>
+        🪱 Anthelmintics
+    </button>
+
+    <button>
+        💉 NSAIDs
+    </button>
+
+    <div id="drugResult"></div>
+
+</div>
+
+
+</div>
+
+<div class="container">
 
 
 <div class="container">
@@ -114,20 +154,23 @@
 
     </div>
 
-    <div class="feature-card">
-        <img src="image/calulator.png" class="card-image">
+   <div class="feature-card" onclick="openDrugLibrary()">
 
+    <img src="image/calulator.png" class="card-image">
 
-        <h3>💊 Veterinary Calculators</h3>
-<p class="start-link">
-    Coming Soon
+    <h3>💊 Drug Library & Dose Reference</h3>
+
+    <p>
+    Antibiotics • Antifungals • Anthelmintics
     </p>
-        
 
-    </div>
-    
+    <p class="start-link">
+    ▶ Open Drug Library
+    </p>
 
 </div>
+    
+
 
     
 
@@ -271,7 +314,7 @@ Not a substitute for professional veterinary consultation.
 
 <script src="nutrition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+<script src="drugDatabase.js"></script>
 <script src="app.js"></script>
 
 

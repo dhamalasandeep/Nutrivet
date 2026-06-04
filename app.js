@@ -1112,3 +1112,42 @@ recommendations.
     ).innerHTML = html;
 
 }
+function openDrugLibrary() {
+
+    document.querySelector(".container").style.display = "none";
+
+    document.getElementById("drugPage").style.display = "block";
+
+}
+
+function goHomeDrug() {
+
+    document.querySelector(".container").style.display = "block";
+
+    document.getElementById("drugPage").style.display = "none";
+
+}
+function showAntibiotics() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🦠 Antibiotics</h3>
+
+    <button>Beta Lactams</button>
+
+    <button>Aminoglycosides</button>
+
+    <button>Tetracyclines</button>
+
+    <button>Fluoroquinolones</button>
+
+    <button>Macrolides</button>
+
+    <button>Sulfonamides</button>
+
+    <button>lincosamides</button>
+    
+
+    `;
+
+}
