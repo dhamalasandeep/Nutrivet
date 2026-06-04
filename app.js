@@ -97,21 +97,10 @@ document.getElementById("petImage");
 
 function updatePetImage() {
 
-    if (species.value === "Dog") {
-
-        petImage.src =
-        "https://cdn-icons-png.flaticon.com/512/616/616408.png";
-
-    }
-
-    else {
-
-        petImage.src =
-        "https://cdn-icons-png.flaticon.com/512/2138/2138440.png";
-
-    }
+    petImage.src = "image/hero.png";
 
 }
+
 function updateDietOptions() {
 
 
