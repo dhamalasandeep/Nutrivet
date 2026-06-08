@@ -1133,20 +1133,426 @@ function showAntibiotics() {
 
     <h3>🦠 Antibiotics</h3>
 
-    <button>Beta Lactams</button>
+    <button onclick="showBetaLactams()">
+        Beta Lactams
+    </button>
 
-    <button>Aminoglycosides</button>
+   <button onclick="showAminoglycosides()">
+    Aminoglycosides
+</button>
 
-    <button>Tetracyclines</button>
+    <button onclick="showTetracyclines()">
+    Tetracyclines
+</button>
 
-    <button>Fluoroquinolones</button>
+    <button onclick="showFluoroquinolones()">
+    Fluoroquinolones
+</button>
 
-    <button>Macrolides</button>
+  <button onclick="showMacrolides()">
+    Macrolides
+</button>
 
-    <button>Sulfonamides</button>
+   <button onclick="showSulfonamides()">
+    Sulfonamides
+</button>
+<button onclick="showLincosamides()">
+    Lincosamides
+</button>
 
-    <button>lincosamides</button>
-    
+<button onclick="showPhenicols()">
+    Phenicols
+</button>
+
+<button onclick="showNitroimidazoles()">
+    Nitroimidazoles
+</button>
+<button onclick="showPolymyxins()">
+    Polymyxins
+</button>
+
+
+
+
+
+
+    `;
+
+}
+function showBetaLactams() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🦠 Beta Lactams</h3>
+
+    <button onclick="showPenicillins()">
+        Penicillins
+    </button>
+
+   <button onclick="showCephalosporins()">
+    Cephalosporins
+</button>
+
+      <button onclick="showCarbapenems()">
+        Carbapenems
+    </button>
+
+    <button onclick="showMonobactams()">
+        Monobactams
+    </button>
+
+    `;
+
+}
+function showPenicillins() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Penicillins</h3>
+
+    <button onclick="showDrug('Penicillin G')">
+        Penicillin G
+    </button>
+
+    <button onclick="showDrug('Amoxicillin')">
+        Amoxicillin
+    </button>
+
+    <button onclick="showDrug('Ampicillin')">
+        Ampicillin
+    </button>
+
+    <button onclick="showDrug('Amoxicillin + Clavulanate')">
+        Amoxicillin + Clavulanate
+    </button>
+
+    `;
+
+}
+
+
+function showAmoxicillin() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <div class="result-card">
+
+    <h3>💊 Amoxicillin</h3>
+
+    <p><b>Class:</b> Penicillin</p>
+
+    <p><b>Dog Dose:</b> Data Coming Soon</p>
+
+    <p><b>Cat Dose:</b> Data Coming Soon</p>
+
+    <p><b>Route:</b> PO</p>
+
+    <p><b>Frequency:</b> BID</p>
+
+    <p><b>Uses:</b>
+    Skin infections,
+    Respiratory infections,
+    Urinary tract infections
+    </p>
+
+    </div>
+
+    `;
+
+}
+function showDrug(drugName) {
+
+    const drug = drugs[drugName];
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <div class="result-card">
+
+        <h2>💊 ${drugName}</h2>
+
+        <p><b>Class:</b> ${drug.class}</p>
+
+        <p><b>Dog Dose:</b> ${drug.dogDose}</p>
+
+        <p><b>Cat Dose:</b> ${drug.catDose}</p>
+
+        <p><b>Route:</b> ${drug.route}</p>
+
+        <p><b>Frequency:</b> ${drug.frequency}</p>
+
+        <hr>
+
+        <p><b>Uses:</b> Coming Soon</p>
+
+        <p><b>Warnings:</b> Coming Soon</p>
+
+    </div>
+
+    `;
+
+}
+
+
+function showCephalosporins() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Cephalosporins</h3>
+
+    <button onclick="showDrug('Cefalexin')">
+        Cefalexin
+    </button>
+
+    <button onclick="showDrug('Cefadroxil')">
+        Cefadroxil
+    </button>
+
+    <button onclick="showDrug('Cefotaxime')">
+        Cefotaxime
+    </button>
+
+    <button onclick="showDrug('Ceftriaxone')">
+        Ceftriaxone
+    </button>
+
+    <button onclick="showDrug('Cefpodoxime')">
+        Cefpodoxime
+    </button>
+
+    <button onclick="showDrug('Cefovecin')">
+        Cefovecin
+    </button>
+
+    `;
+
+}
+function showAminoglycosides() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Aminoglycosides</h3>
+
+    <button onclick="showDrug('Gentamicin')">
+        Gentamicin
+    </button>
+
+    <button onclick="showDrug('Amikacin')">
+        Amikacin
+    </button>
+
+    <button onclick="showDrug('Neomycin')">
+        Neomycin
+    </button>
+
+    <button onclick="showDrug('Streptomycin')">
+        Streptomycin
+    </button>
+
+    `;
+
+}
+function showTetracyclines() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Tetracyclines</h3>
+
+    <button onclick="showDrug('Doxycycline')">
+        Doxycycline
+    </button>
+
+    <button onclick="showDrug('Oxytetracycline')">
+        Oxytetracycline
+    </button>
+
+    <button onclick="showDrug('Tetracycline')">
+        Tetracycline
+    </button>
+
+    <button onclick="showDrug('Minocycline')">
+        Minocycline
+    </button>
+
+    `;
+
+}
+function showFluoroquinolones() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Fluoroquinolones</h3>
+
+    <button onclick="showDrug('Enrofloxacin')">
+        Enrofloxacin
+    </button>
+
+    <button onclick="showDrug('Marbofloxacin')">
+        Marbofloxacin
+    </button>
+
+    <button onclick="showDrug('Orbifloxacin')">
+        Orbifloxacin
+    </button>
+
+    <button onclick="showDrug('Pradofloxacin')">
+        Pradofloxacin
+    </button>
+
+    <button onclick="showDrug('Ciprofloxacin')">
+        Ciprofloxacin
+    </button>
+
+    `;
+
+}
+function showMacrolides() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Macrolides</h3>
+
+    <button onclick="showDrug('Azithromycin')">
+        Azithromycin
+    </button>
+
+    <button onclick="showDrug('Erythromycin')">
+        Erythromycin
+    </button>
+
+    <button onclick="showDrug('Clarithromycin')">
+        Clarithromycin
+    </button>
+
+    <button onclick="showDrug('Tylosin')">
+        Tylosin
+    </button>
+
+    <button onclick="showDrug('Tulathromycin')">
+        Tulathromycin
+    </button>
+
+    `;
+
+}
+function showSulfonamides() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Sulfonamides</h3>
+
+    <button onclick="showDrug('Trimethoprim-Sulfamethoxazole')">
+        Trimethoprim-Sulfamethoxazole
+    </button>
+
+    <button onclick="showDrug('Trimethoprim-Sulfadiazine')">
+        Trimethoprim-Sulfadiazine
+    </button>
+
+    <button onclick="showDrug('Sulfadimethoxine')">
+        Sulfadimethoxine
+    </button>
+
+    `;
+
+}
+function showLincosamides() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Lincosamides</h3>
+
+    <button onclick="showDrug('Clindamycin')">
+        Clindamycin
+    </button>
+
+    <button onclick="showDrug('Lincomycin')">
+        Lincomycin
+    </button>
+
+    `;
+
+}
+function showPhenicols() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Phenicols</h3>
+
+    <button onclick="showDrug('Chloramphenicol')">
+        Chloramphenicol
+    </button>
+
+    <button onclick="showDrug('Florfenicol')">
+        Florfenicol
+    </button>
+
+    `;
+
+}
+function showNitroimidazoles() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Nitroimidazoles</h3>
+
+    <button onclick="showDrug('Metronidazole')">
+        Metronidazole
+    </button>
+
+    <button onclick="showDrug('Ronidazole')">
+        Ronidazole
+    </button>
+
+    `;
+
+}
+function showPolymyxins() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Polymyxins</h3>
+
+    <button onclick="showDrug('Polymyxin B')">
+        Polymyxin B
+    </button>
+
+    <button onclick="showDrug('Colistin')">
+        Colistin
+    </button>
+
+    `;
+
+}
+function showCarbapenems() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Carbapenems</h3>
+
+    <button onclick="showDrug('Imipenem')">
+        Imipenem
+    </button>
+
+    <button onclick="showDrug('Meropenem')">
+        Meropenem
+    </button>
+
+    <button onclick="showDrug('Ertapenem')">
+        Ertapenem
+    </button>
+
+    `;
+
+}
+function showMonobactams() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Monobactams</h3>
+
+    <button onclick="showDrug('Aztreonam')">
+        Aztreonam
+    </button>
 
     `;
 
