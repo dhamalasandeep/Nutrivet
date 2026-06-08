@@ -1557,3 +1557,234 @@ function showMonobactams() {
     `;
 
 }
+function showAntifungals() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🍄 Antifungals</h3>
+
+    <button onclick="showAzoles()">
+        Azoles
+    </button>
+
+    <button onclick="showPolyenes()">
+        Polyenes
+    </button>
+
+    <button onclick="showAllylamines()">
+        Allylamines
+    </button>
+
+    <button onclick="showEchinocandins()">
+        Echinocandins
+    </button>
+
+    `;
+
+}
+function showAzoles() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🍄 Azoles</h3>
+
+    <button onclick="showDrug('Ketoconazole')">
+        Ketoconazole
+    </button>
+
+    <button onclick="showDrug('Itraconazole')">
+        Itraconazole
+    </button>
+
+    <button onclick="showDrug('Fluconazole')">
+        Fluconazole
+    </button>
+
+    <button onclick="showDrug('Voriconazole')">
+        Voriconazole
+    </button>
+
+    `;
+
+}
+function showPolyenes() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🍄 Polyenes</h3>
+
+    <button onclick="showDrug('Amphotericin B')">
+        Amphotericin B
+    </button>
+
+    <button onclick="showDrug('Nystatin')">
+        Nystatin
+    </button>
+
+    `;
+
+}
+function showAllylamines() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🍄 Allylamines</h3>
+
+    <button onclick="showDrug('Terbinafine')">
+        Terbinafine
+    </button>
+
+    `;
+
+}
+function showEchinocandins() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🍄 Echinocandins</h3>
+
+    <button onclick="showDrug('Caspofungin')">
+        Caspofungin
+    </button>
+
+    <button onclick="showDrug('Micafungin')">
+        Micafungin
+    </button>
+
+    `;
+
+}
+function showAnthelmintics() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Anthelmintics</h3>
+
+    <button onclick="showBenzimidazoles()">
+        Benzimidazoles
+    </button>
+
+    <button onclick="showMacrocyclicLactones()">
+        Macrocyclic Lactones
+    </button>
+
+    <button onclick="showTetrahydropyrimidines()">
+        Tetrahydropyrimidines
+    </button>
+
+    <button onclick="showIsoquinolines()">
+        Isoquinolines
+    </button>
+
+    `;
+
+}
+function showBenzimidazoles() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Benzimidazoles</h3>
+
+    <button onclick="showDrug('Fenbendazole')">
+        Fenbendazole
+    </button>
+
+    <button onclick="showDrug('Albendazole')">
+        Albendazole
+    </button>
+
+    <button onclick="showDrug('Mebendazole')">
+        Mebendazole
+    </button>
+
+    <button onclick="showDrug('Oxfendazole')">
+        Oxfendazole
+    </button>
+
+    `;
+
+}
+function showMacrocyclicLactones() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Macrocyclic Lactones</h3>
+
+    <button onclick="showDrug('Ivermectin')">
+        Ivermectin
+    </button>
+
+    <button onclick="showDrug('Doramectin')">
+        Doramectin
+    </button>
+
+    <button onclick="showDrug('Moxidectin')">
+        Moxidectin
+    </button>
+
+    <button onclick="showDrug('Selamectin')">
+        Selamectin
+    </button>
+
+    <button onclick="showDrug('Milbemycin Oxime')">
+        Milbemycin Oxime
+    </button>
+
+    `;
+
+}
+function showTetrahydropyrimidines() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Tetrahydropyrimidines</h3>
+
+    <button onclick="showDrug('Pyrantel Pamoate')">
+        Pyrantel Pamoate
+    </button>
+
+    <button onclick="showDrug('Pyrantel Tartrate')">
+        Pyrantel Tartrate
+    </button>
+
+    <button onclick="showDrug('Morantel')">
+        Morantel
+    </button>
+
+    `;
+
+}
+function showIsoquinolines() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Isoquinolines</h3>
+
+    <button onclick="showDrug('Praziquantel')">
+        Praziquantel
+    </button>
+
+    <button onclick="showDrug('Epsiprantel')">
+        Epsiprantel
+    </button>
+
+    `;
+
+}
+function showOtherAnthelmintics() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>🪱 Other Anthelmintics</h3>
+
+    <button onclick="showDrug('Emodepside')">
+        Emodepside
+    </button>
+
+    <button onclick="showDrug('Nitroscanate')">
+        Nitroscanate
+    </button>
+
+    `;
+
+}

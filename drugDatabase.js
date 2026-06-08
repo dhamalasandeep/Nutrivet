@@ -391,5 +391,213 @@ const drugs = {
     route: "IV",
     frequency: "Coming Soon"
 }
+,
 
+"Ketoconazole": {
+    class: "Azole Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Itraconazole": {
+    class: "Azole Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Fluconazole": {
+    class: "Azole Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Voriconazole": {
+    class: "Azole Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Amphotericin B": {
+    class: "Polyene Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV",
+    frequency: "Coming Soon"
+},
+
+"Nystatin": {
+    class: "Polyene Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/Topical",
+    frequency: "Coming Soon"
+}
+,
+
+"Terbinafine": {
+    class: "Allylamine Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Caspofungin": {
+    class: "Echinocandin Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV",
+    frequency: "Coming Soon"
+},
+
+"Micafungin": {
+    class: "Echinocandin Antifungal",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV",
+    frequency: "Coming Soon"
+}
+,
+
+"Fenbendazole": {
+    class: "Benzimidazole Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Albendazole": {
+    class: "Benzimidazole Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Mebendazole": {
+    class: "Benzimidazole Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Oxfendazole": {
+    class: "Benzimidazole Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Ivermectin": {
+    class: "Macrocyclic Lactone",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/SC",
+    frequency: "Coming Soon"
+},
+
+"Doramectin": {
+    class: "Macrocyclic Lactone",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "SC/IM",
+    frequency: "Coming Soon"
+},
+
+"Moxidectin": {
+    class: "Macrocyclic Lactone",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/Topical",
+    frequency: "Coming Soon"
+},
+
+"Selamectin": {
+    class: "Macrocyclic Lactone",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "Topical",
+    frequency: "Coming Soon"
+},
+
+"Milbemycin Oxime": {
+    class: "Macrocyclic Lactone",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Pyrantel Pamoate": {
+    class: "Tetrahydropyrimidine Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Pyrantel Tartrate": {
+    class: "Tetrahydropyrimidine Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Morantel": {
+    class: "Tetrahydropyrimidine Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Praziquantel": {
+    class: "Isoquinoline Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Epsiprantel": {
+    class: "Isoquinoline Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
+,
+
+"Emodepside": {
+    class: "Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "Topical/PO",
+    frequency: "Coming Soon"
+},
+
+"Nitroscanate": {
+    class: "Anthelmintic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+}
 };
