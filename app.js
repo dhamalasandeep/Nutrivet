@@ -92,6 +92,7 @@ function updateReproductiveOptions() {
     }
 
 }
+updateReproductiveOptions();
 const petImage =
 document.getElementById("petImage");
 
@@ -961,6 +962,10 @@ font-weight:bold;
     
     
 `;
+document.getElementById("results")
+.scrollIntoView({
+    behavior: "smooth"
+});
 
 document.getElementById("pdfBtn").style.display = "block";
 }

@@ -193,46 +193,59 @@ Nutrition • Drug Library • Vaccination • Deworming
      style="display:none;">
 
     <h2>Pet Details</h2>
-
+<div class="form-grid">
+    <div class="form-group">
     <label>Species</label>
     <select id="species">
         <option value="Dog">Dog</option>
         <option value="Cat">Cat</option>
     </select>
+</div>
 
+<div class="form-group">
     <label>Breed</label>
     <select id="breed"></select>
+</div>
 
+<div class="form-group">
     <label>Age (Years)</label>
     <input type="number" id="age" step="0.1" min="0" max="25" required>
+</div>
 
+<div class="form-group">
     <label>Weight (kg)</label>
     <input type="number" id="weight" step="0.1" min="0.3" max="110" required>
+</div>
 
+<div class="form-group">
     <label>Sex</label>
-    <select id="sex">
+    <select id="sex" onchange="updateReproductiveOptions()">
         <option>Male</option>
         <option>Female</option>
     </select>
+</div>
 
-    <div id="reproBox">
-        <label>Reproductive Status</label>
-        <select id="reproductive">
-            <option>Intact</option>
-            <option>Neutered</option>
-            <option>Spayed</option>
-            <option>Pregnant</option>
-            <option>Lactating</option>
-        </select>
-    </div>
+<div class="form-group" id="reproBox">
+    <label>Reproductive Status</label>
+    <select id="reproductive">
+        <option>Intact</option>
+        <option>Neutered</option>
+        <option>Spayed</option>
+        <option>Pregnant</option>
+        <option>Lactating</option>
+    </select>
+</div>
 
+<div class="form-group">
     <label>Activity Level</label>
     <select id="activity">
         <option>Low</option>
         <option>Moderate</option>
         <option>High</option>
     </select>
+</div>
 
+<div class="form-group">
     <label>Health Status</label>
     <select id="health">
         <option>Healthy</option>
@@ -241,34 +254,44 @@ Nutrition • Drug Library • Vaccination • Deworming
         <option>CKD</option>
         <option>Liver Disease</option>
     </select>
+</div>
+
+<div class="form-group">
     <label>Body Condition Score</label>
+    <select id="bcs">
+        <option>Underweight</option>
+        <option>Ideal</option>
+        <option>Overweight</option>
+        <option>Obese</option>
+    </select>
+</div>
 
-<select id="bcs">
-    <option>Underweight</option>
-    <option>Ideal</option>
-    <option>Overweight</option>
-    <option>Obese</option>
-</select>
+<div class="form-group">
     <label>Diet Type</label>
-<select id="dietType">
-    <option>Chicken Based</option>
-    <option>Fish Based</option>
-    <option>Egg Based</option>
-    <option value="Vegetarian"> Vegetarian (Dogs Only) </option> 
-    <option value="Commercial Feed">Commercial Feed</option>
-</select>
-<div id="feedBrandBox" style="display:none;">
+    <select id="dietType">
+        <option>Chicken Based</option>
+        <option>Fish Based</option>
+        <option>Egg Based</option>
+        <option value="Vegetarian">Vegetarian (Dogs Only)</option>
+        <option value="Commercial Feed">Commercial Feed</option>
+    </select>
+</div>
 
-<label>Feed Brand</label>
+<div class="form-group" id="feedBrandBox" style="display:none;">
 
-<select id="feedBrand">
-    <option value="Pedigree">Pedigree</option>
-    <option value="Drools">Drools</option>
-    <option value="Royal Canin">Royal Canin</option>
-    <option value="Farmina">Farmina</option>
-    <option value="Whiskas">Whiskas</option>
-    <option value="Me-O">Me-O</option>
-</select>
+    <label>Feed Brand</label>
+
+    <select id="feedBrand">
+        <option value="Pedigree">Pedigree</option>
+        <option value="Drools">Drools</option>
+        <option value="Royal Canin">Royal Canin</option>
+        <option value="Farmina">Farmina</option>
+        <option value="Whiskas">Whiskas</option>
+        <option value="Me-O">Me-O</option>
+    </select>
+    </div>
+
+
 
 </div>
 

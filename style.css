@@ -386,3 +386,135 @@ footer{
     margin:8px 0;
 
 }
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+    color:#1E3A8A;
+
+}
+
+
+
+
+#nutritionSection{
+
+    max-width:950px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+#nutritionSection h2{
+
+    text-align:center;
+
+    color:#1E3A8A;
+
+    margin-bottom:30px;
+
+    font-size:32px;
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+    color:#1E3A8A;
+
+}
+
+.form-group input,
+.form-group select{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    box-sizing:border-box;
+
+    background:white;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    outline:none;
+
+    border-color:#00A99D;
+
+    box-shadow:
+    0 0 0 3px rgba(0,169,157,.15);
+
+}
+
+#nutritionSection button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:15px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+@media(max-width:768px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
