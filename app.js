@@ -1788,3 +1788,83 @@ function showOtherAnthelmintics() {
     `;
 
 }
+
+    function showNSAIDs() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💉 NSAIDs</h3>
+
+    <button onclick="showDrug('Carprofen')">
+        Carprofen
+    </button>
+
+    <button onclick="showDrug('Meloxicam')">
+        Meloxicam
+    </button>
+
+    <button onclick="showDrug('Firocoxib')">
+        Firocoxib
+    </button>
+
+    <button onclick="showDrug('Robenacoxib')">
+        Robenacoxib
+    </button>
+
+    <button onclick="showDrug('Ketoprofen')">
+        Ketoprofen
+    </button>
+
+    <button onclick="showDrug('Flunixin Meglumine')">
+        Flunixin Meglumine
+    </button>
+
+    <button onclick="showDrug('Tolfenamic Acid')">
+        Tolfenamic Acid
+    </button>
+
+    `;
+
+}
+function showSedatives() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>😴 Sedatives & Anesthetics</h3>
+
+    <button onclick="showDrug('Xylazine')">
+        Xylazine
+    </button>
+
+    <button onclick="showDrug('Diazepam')">
+        Diazepam
+    </button>
+
+    <button onclick="showDrug('Midazolam')">
+        Midazolam
+    </button>
+
+    <button onclick="showDrug('Acepromazine')">
+        Acepromazine
+    </button>
+
+    <button onclick="showDrug('Dexmedetomidine')">
+        Dexmedetomidine
+    </button>
+
+    <button onclick="showDrug('Medetomidine')">
+        Medetomidine
+    </button>
+
+    <button onclick="showDrug('Ketamine')">
+        Ketamine
+    </button>
+
+    <button onclick="showDrug('Propofol')">
+        Propofol
+    </button>
+
+    `;
+
+}
+

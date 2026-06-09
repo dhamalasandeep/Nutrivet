@@ -600,4 +600,126 @@ const drugs = {
     route: "PO",
     frequency: "Coming Soon"
 }
+,
+
+"Carprofen": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/SC",
+    frequency: "Coming Soon"
+},
+
+"Meloxicam": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/SC",
+    frequency: "Coming Soon"
+},
+
+"Firocoxib": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Robenacoxib": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/SC",
+    frequency: "Coming Soon"
+},
+
+"Ketoprofen": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Flunixin Meglumine": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV",
+    frequency: "Coming Soon"
+},
+
+"Tolfenamic Acid": {
+    class: "NSAID",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO/SC",
+    frequency: "Coming Soon"
+}
+,
+
+"Xylazine": {
+    class: "Sedative",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Diazepam": {
+    class: "Benzodiazepine",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/PO",
+    frequency: "Coming Soon"
+},
+
+"Midazolam": {
+    class: "Benzodiazepine",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Acepromazine": {
+    class: "Phenothiazine Tranquilizer",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM/PO",
+    frequency: "Coming Soon"
+},
+
+"Dexmedetomidine": {
+    class: "Alpha-2 Agonist",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Medetomidine": {
+    class: "Alpha-2 Agonist",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Ketamine": {
+    class: "Dissociative Anesthetic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Propofol": {
+    class: "General Anesthetic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV",
+    frequency: "Coming Soon"
+}
 };
