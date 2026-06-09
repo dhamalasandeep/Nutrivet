@@ -1826,6 +1826,39 @@ function showOtherAnthelmintics() {
     `;
 
 }
+function showAnalgesics() {
+
+    document.getElementById("drugResult").innerHTML = `
+
+    <h3>💊 Analgesics</h3>
+
+    <button onclick="showDrug('Tramadol')">
+        Tramadol
+    </button>
+
+    <button onclick="showDrug('Gabapentin')">
+        Gabapentin
+    </button>
+
+    <button onclick="showDrug('Buprenorphine')">
+        Buprenorphine
+    </button>
+
+    <button onclick="showDrug('Butorphanol')">
+        Butorphanol
+    </button>
+
+    <button onclick="showDrug('Morphine')">
+        Morphine
+    </button>
+
+    <button onclick="showDrug('Fentanyl')">
+        Fentanyl
+    </button>
+
+    `;
+
+}
 function showSedatives() {
 
     document.getElementById("drugResult").innerHTML = `
@@ -1867,4 +1900,79 @@ function showSedatives() {
     `;
 
 }
+function searchDrug() {
 
+    let search =
+    document.getElementById("drugSearch")
+    .value
+    .toLowerCase();
+
+    let result = "";
+
+    for(let drug in drugs){
+
+        if(
+            drug.toLowerCase()
+            .includes(search)
+        ){
+
+            result += `
+            <button
+            onclick="showDrug('${drug}')">
+
+            ${drug}
+
+            </button>
+            `;
+        }
+    }
+
+    document.getElementById(
+    "drugResult"
+    ).innerHTML = result;
+
+}
+function searchDrug() {
+
+    let search =
+    document.getElementById("drugSearch")
+    .value
+    .toLowerCase();
+
+    let result = "";
+
+    for(let drug in drugs){
+
+        if(
+            drug.toLowerCase()
+            .includes(search)
+        ){
+
+            result += `
+
+            <div class="search-card">
+
+                <h4>${drug}</h4>
+
+                <p>
+                ${drugs[drug].class}
+                </p>
+
+                <button
+                onclick="showDrug('${drug}')">
+
+                Open Drug
+
+                </button>
+
+            </div>
+
+            `;
+        }
+    }
+
+    document.getElementById(
+    "drugResult"
+    ).innerHTML = result;
+
+}

@@ -12,7 +12,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NutriVet</title>
+<tittle>NutriVet</tittle>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -56,6 +56,11 @@
 <div class="card">
 
     <h2>💊 Drug Library </h2>
+    <input
+type="text"
+id="drugSearch"
+placeholder="🔍 Search Drug..."
+onkeyup="searchDrug()">
 
     <button onclick="showAntibiotics()">
         🦠 Antibiotics
@@ -71,6 +76,9 @@
 
     <button onclick="showNSAIDs()">
     💉 NSAIDs
+</button>
+<button onclick="showAnalgesics()">
+    💊 Analgesics
 </button>
 <button onclick="showSedatives()">
     😴 Sedatives
@@ -92,17 +100,14 @@
         
 
         <h1>🐾 NutriVet</h1>
-        <p>
-           Professional Veterinary Nutrition Planner
-        </p>
-        <img id="petImage"
-     src="image/hero.png"
-     alt="NutriVet Logo">
 
-         <p>
-          RER • MER • Clinical Nutrition • PDF Reports
-          </p>
+<p class="hero-subtitle">
+Your Veterinary Clinical Companion
+</p>
 
+<p class="hero-desc">
+Nutrition • Drug Library • Vaccination • Deworming
+</p>
 
         
 
@@ -301,21 +306,39 @@
 
 
 </div>
-<div class="references">
+<details class="accordion">
 
-<h3>📚 Nutrition References</h3>
+<summary>📚 References Used</summary>
+
+<div class="accordion-content">
 
 <ul>
-<li>NRC Nutrient Requirements of Dogs and Cats</li>
-<li>AAFCO Dog & Cat Food Nutrient Profiles</li>
-<li>FEDIAF Nutritional Guidelines for Cats and Dogs</li>
+<li>NRC Nutrient Requirements</li>
+<li>Merck Veterinary Manual</li>
+<li>BSAVA Guidelines</li>
+<li>Veterinary Pharmacology Sources</li>
 </ul>
 
 </div>
-<p class="disclaimer">
-Educational veterinary nutrition planning tool.
-Not a substitute for professional veterinary consultation.
+
+</details>
+<details class="accordion">
+
+<summary>⚠️ Disclaimer</summary>
+
+<div class="accordion-content">
+
+<p>
+
+This application is intended for educational and informational purposes only.
+
+Always consult a licensed veterinarian before making clinical decisions.
+
 </p>
+
+</div>
+
+</details>
 <footer>
     NutriVet v1.0 | Developed by Sandeep Dhamala
 </footer>

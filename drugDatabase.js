@@ -722,4 +722,53 @@ const drugs = {
     route: "IV",
     frequency: "Coming Soon"
 }
+,
+
+"Tramadol": {
+    class: "Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Gabapentin": {
+    class: "Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "PO",
+    frequency: "Coming Soon"
+},
+
+"Buprenorphine": {
+    class: "Opioid Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Butorphanol": {
+    class: "Opioid Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Morphine": {
+    class: "Opioid Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/IM",
+    frequency: "Coming Soon"
+},
+
+"Fentanyl": {
+    class: "Opioid Analgesic",
+    dogDose: "Coming Soon",
+    catDose: "Coming Soon",
+    route: "IV/CRI",
+    frequency: "Coming Soon"
+}
 };
