@@ -93,10 +93,12 @@ function updateReproductiveOptions() {
 
 }
 updateReproductiveOptions();
-const petImage =
-document.getElementById("petImage");
-
 function updatePetImage() {
+
+    const petImage =
+    document.getElementById("petImage");
+
+    if (!petImage) return;
 
     petImage.src = "image/hero.png";
 
@@ -220,6 +222,91 @@ sex.addEventListener(
 );
 
 updateReproductiveOptions();
+ 
+
+const foods = {
+
+    Chicken:{
+        protein:27,
+        fat:3,
+        carbs:0,
+        kcal:165
+    },
+
+    Fish:{
+        protein:22,
+        fat:5,
+        carbs:0,
+        kcal:140
+    },
+
+    Egg:{
+        protein:13,
+        fat:11,
+        carbs:1,
+        kcal:155
+    },
+
+    Curd:{
+        protein:3.5,
+        fat:3,
+        carbs:4,
+        kcal:61
+    },
+
+    Rice:{
+        protein:2.7,
+        fat:0.3,
+        carbs:28,
+        kcal:130
+    },
+
+    Pumpkin:{
+        protein:1,
+        fat:0.1,
+        carbs:7,
+        kcal:26
+    },
+    SweetPotato:{
+    protein:1.6,
+    fat:0.1,
+    carbs:20,
+    kcal:86
+},
+
+Oats:{
+    protein:17,
+    fat:7,
+    carbs:66,
+    kcal:389
+},
+
+    Paneer:{
+        protein:18,
+        fat:20,
+        carbs:2,
+        kcal:265
+    },
+
+    Soybean:{
+        protein:18,
+        fat:9,
+        carbs:10,
+        kcal:173
+    },
+    
+
+};
+function proteinToGrams(
+    targetProtein,
+    foodProtein
+){
+
+    return Math.round(
+        (targetProtein / foodProtein) * 100
+    );
+
+}
 
 
 function generatePlan () 
@@ -237,13 +324,13 @@ if (!weight) {
     alert("Enter weight");
     return;
 }
-if (species.value ==="cat")
+if (species.value ==="Cat")
 if (age < 0 || age > 20) {
     alert("Please enter a valid age (0–20 years)");
     return;
 }
 
-if (species.value ==="dog")
+if (species.value ==="Dog")
 if (age < 0 || age > 25) {
     alert("Please enter a valid age (0–25 years)");
     return;
@@ -495,11 +582,40 @@ if (species.value === "Cat") {
 
 else {
 
-    protein = Math.round((mer * 0.25) / 4);
+    protein = Math.round((mer * 0.30) / 4);
 
-    fat = Math.round((mer * 0.15) / 9);
+    fat = Math.round((mer * 0.20) / 9);
 
-    carbs = Math.round((mer * 0.60) / 4);
+    carbs = Math.round((mer * 0.50) / 4);
+
+}
+if (health === "CKD") {
+
+    protein = Math.round(protein * 0.80);
+
+    carbs = Math.round(carbs * 1.10);
+
+}
+
+if (health === "Weight Loss required") {
+
+    protein = Math.round(protein * 1.15);
+
+    carbs = Math.round(carbs * 0.85);
+
+}
+
+if (health === "Weight Gain required") {
+
+    protein = Math.round(protein * 1.10);
+
+    carbs = Math.round(carbs * 1.15);
+
+}
+
+if (health === "Liver Disease") {
+
+    protein = Math.round(protein * 0.90);
 
 }
 const water = Math.round(weight * 60);
@@ -718,6 +834,23 @@ if (bcs === "Obese") {
     bcsNote =
     "Structured weight reduction program recommended.";
 }
+let proteinFactor = 1;
+
+if(health === "CKD"){
+    proteinFactor = 0.75;
+}
+
+if(health === "Liver Disease"){
+    proteinFactor = 0.85;
+}
+
+if(health === "Weight Gain required"){
+    proteinFactor = 1.15;
+}
+
+if(health === "Weight Loss required"){
+    proteinFactor = 0.90;
+}
 
 
 
@@ -728,7 +861,8 @@ if (dietType === "Chicken Based") {
 if (species.value === "Cat") {
 
 dietPlan = `
-Chicken: ${Math.round(weight * 20)} g/day<br>
+Chicken:
+${Math.round((protein * proteinFactor)/0.27)} g/day
 Boiled Egg: ${Math.max(0.5, (weight / 8).toFixed(1))} egg/day<br>
 Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
 
@@ -742,12 +876,68 @@ Pumpkin: ${Math.round(weight)} g/day<br>
 
 } else {
 
+const chickenProtein = protein * 0.70;
+const eggProtein = protein * 0.25;
+const curdProtein = protein * 0.05;
+
+const chickenGrams =
+Math.round((chickenProtein / 27) * 100);
+
+const curdGrams =
+Math.round((curdProtein / 3.5) * 100);
+
+const eggGrams =
+Math.round((eggProtein / 13) * 100);
+
+const eggsPerDay =
+Math.max(1, Math.ceil(eggGrams / 50));
+
+const riceCarbs = carbs * 0.50;
+const sweetPotatoCarbs = carbs * 0.30;
+const oatsCarbs = carbs * 0.15;
+const pumpkinCarbs = carbs * 0.05;
+
+const riceGrams =
+Math.round((riceCarbs / foods.Rice.carbs) * 100);
+
+const sweetPotatoGrams =
+Math.round((sweetPotatoCarbs / foods.SweetPotato.carbs) * 100);
+
+const oatsGrams =
+Math.round((oatsCarbs / foods.Oats.carbs) * 100);
+
+const pumpkinGrams =
+Math.min(
+50,
+Math.round((pumpkinCarbs / foods.Pumpkin.carbs) * 100)
+);
 dietPlan = `
-Chicken: ${Math.round(weight * 10)} g/day<br>
-Rice: ${Math.round(weight * 8)} g/day<br>
-Curd: ${Math.round(weight * 3)} g/day<br>
-Pumpkin: ${Math.round(weight * 2)} g/day<br>
+
+<h4>🐔 Protein Sources</h4>
+
+Chicken: ${chickenGrams} g/day<br>
+
+Eggs: ${eggsPerDay}/day<br>
+
+Curd: ${curdGrams} g/day<br>
+
+<hr>
+
+<h4>🍚 Carbohydrate Sources</h4>
+
+Rice: ${riceGrams} g/day<br>
+
+SweetPotato: ${sweetPotatoGrams} g/day<br>
+
+Oats: ${oatsGrams} g/day<br>
+
+Pumpkin: ${pumpkinGrams} g/day<br>
+<hr>
+
+<h4>🐟 Fat Source</h4>
+
 Fish Oil (Optional): 5 ml/day
+
 `;
 
 }
@@ -756,73 +946,262 @@ Fish Oil (Optional): 5 ml/day
 
 if (dietType === "Fish Based") {
 
-if (species.value === "Cat") {
+    if (species.value === "Cat") {
 
-dietPlan = `
-Fish: ${Math.round(weight * 20)} g/day<br>
-Boiled Egg: ${Math.max(0.5, (weight / 8).toFixed(1))} egg/day<br>
-Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
+        dietPlan = `
+Fish:
+${Math.round((protein * proteinFactor)/0.22)} g/day<br>
+
+Boiled Eggs:
+${Math.max(1, Math.round(weight / 5))}/day<br>
+
+Commercial Cat Food (Optional):
+${Math.round(weight * 4)} g/day<br>
 
 <hr>
 
 <b>Optional Foods</b><br>
-Pumpkin: ${Math.round(weight)} g/day<br>
 
-⚠ Animal protein should form the major portion of the diet.
+Pumpkin:
+${Math.min(30, Math.round(weight))} g/day<br>
+
+⚠ Cats are obligate carnivores. Animal protein should form the major portion of the diet.
 `;
 
-dietPlan = `
-Fish: ${Math.round(weight * 10)} g/day<br>
-Rice: ${Math.round(weight * 8)} g/day<br>
-Curd: ${Math.round(weight * 3)} g/day<br>
+    }
+
+    else {
+
+        const fishProtein = protein * 0.70;
+        const eggProtein = protein * 0.25;
+        const curdProtein = protein * 0.05;
+
+        const fishGrams =
+        Math.round((fishProtein / 22) * 100);
+
+        const curdGrams =
+        Math.round((curdProtein / 3.5) * 100);
+
+        const eggGrams =
+        Math.round((eggProtein / 13) * 100);
+
+        const eggsPerDay =
+        Math.max(1, Math.ceil(eggGrams / 50));
+
+        const riceCarbs = carbs * 0.50;
+const sweetPotatoCarbs = carbs * 0.30;
+const oatsCarbs = carbs * 0.15;
+const pumpkinCarbs = carbs * 0.05;
+
+const riceGrams =
+Math.round((riceCarbs / foods.Rice.carbs) * 100);
+
+const sweetPotatoGrams =
+Math.round((sweetPotatoCarbs / foods.SweetPotato.carbs) * 100);
+
+const oatsGrams =
+Math.round((oatsCarbs / foods.Oats.carbs) * 100);
+
+const pumpkinGrams =
+Math.min(
+50,
+Math.round((pumpkinCarbs / foods.Pumpkin.carbs) * 100)
+);
+
+        dietPlan = `
+
+<h4>🐟 Protein Sources</h4>
+
+Fish: ${fishGrams} g/day<br>
+
+Eggs: ${eggsPerDay}/day<br>
+
+Curd: ${curdGrams} g/day<br>
+
+<hr>
+
+<h4>🍚 Carbohydrate Sources</h4>
+
+Rice: ${riceGrams} g/day<br>
+Sweet Potato: ${sweetPotatoGrams} g/day<br>
+Oats: ${oatsGrams} g/day<br>
+Pumpkin: ${pumpkinGrams} g/day<br>
+<hr>
+
+<h4>🐟 Fat Source</h4>
+
 Fish Oil (Optional): 5 ml/day
+
 `;
 
-}
+    }
 
 }
 
 if (dietType === "Egg Based") {
 
-if (species.value === "Cat") {
+    if (species.value === "Cat") {
 
-dietPlan = `
-Boiled Eggs: ${Math.max(1, Math.round(weight / 3))}/day<br>
-Chicken: ${Math.round(weight * 8)} g/day<br>
-Commercial Cat Food (Optional): ${Math.round(weight * 4)} g/day<br>
+        dietPlan = `
+Boiled Eggs:
+${Math.max(1, Math.round(weight / 3))}/day<br>
+
+Chicken:
+${Math.round((protein * proteinFactor)/0.27)} g/day<br>
+
+Commercial Cat Food (Optional):
+${Math.round(weight * 4)} g/day<br>
 
 <hr>
 
 <b>Optional Foods</b><br>
-Pumpkin: ${Math.round(weight)} g/day<br>
+
+Pumpkin:
+${Math.min(30, Math.round(weight))} g/day<br>
 
 ⚠ Eggs should always be cooked before feeding.
 `;
 
-} else {
+    }
 
-dietPlan = `
-Eggs: ${Math.max(1, Math.round(weight / 5))}/day<br>
-Rice: ${Math.round(weight * 8)} g/day<br>
-Curd: ${Math.round(weight * 3)} g/day<br>
-Pumpkin: ${Math.round(weight * 2)} g/day
+    else {
+
+        const eggProtein = protein * 0.60;
+        const chickenProtein = protein * 0.30;
+        const curdProtein = protein * 0.10;
+
+        const eggGrams =
+        Math.round((eggProtein / 13) * 100);
+
+        const eggsPerDay =
+        Math.max(1, Math.ceil(eggGrams / 50));
+
+        const chickenGrams =
+        Math.round((chickenProtein / 27) * 100);
+
+        const curdGrams =
+        Math.round((curdProtein / 3.5) * 100);
+
+        const riceCarbs = carbs * 0.50;
+const sweetPotatoCarbs = carbs * 0.30;
+const oatsCarbs = carbs * 0.15;
+const pumpkinCarbs = carbs * 0.05;
+
+const riceGrams =
+Math.round((riceCarbs / foods.Rice.carbs) * 100);
+
+const sweetPotatoGrams =
+Math.round((sweetPotatoCarbs / foods.SweetPotato.carbs) * 100);
+
+const oatsGrams =
+Math.round((oatsCarbs / foods.Oats.carbs) * 100);
+
+const pumpkinGrams =
+Math.min(
+    50,
+    Math.round((pumpkinCarbs / foods.Pumpkin.carbs) * 100)
+);
+
+        dietPlan = `
+
+<h4>🥚 Protein Sources</h4>
+
+Eggs: ${eggsPerDay}/day<br>
+
+Chicken: ${chickenGrams} g/day<br>
+
+Curd: ${curdGrams} g/day<br>
+
+<hr>
+
+<h4>🍚 Carbohydrate Sources</h4>
+
+Rice: ${riceGrams} g/day<br>
+
+Sweet Potato: ${sweetPotatoGrams} g/day<br>
+
+Oats: ${oatsGrams} g/day<br>
+
+Pumpkin: ${pumpkinGrams} g/day<br>
+<hr>
+
+<h4>🥚 Fat Sources</h4>
+
+Egg Yolk Contribution Included<br>
+
+Fish Oil (Optional): 5 ml/day
+
 `;
 
-}
+    }
 
 }
-
 if (dietType === "Vegetarian") {
 
+    const soybeanProtein = protein * 0.50;
+    const paneerProtein = protein * 0.35;
+    const curdProtein = protein * 0.15;
 
-dietPlan = `
-Paneer: ${Math.round(weight * 8)} g/day<br>
-Curd: ${Math.round(weight * 5)} g/day<br>
-Rice: ${Math.round(weight * 8)} g/day<br>
-Pumpkin: ${Math.round(weight * 2)} g/day<br>
+    const soybeanGrams =
+    Math.round((soybeanProtein / 18) * 100);
+
+    const paneerGrams =
+    Math.round((paneerProtein / 18) * 100);
+
+    const curdGrams =
+    Math.round((curdProtein / 3.5) * 100);
+
+    const riceCarbs = carbs * 0.50;
+const sweetPotatoCarbs = carbs * 0.30;
+const oatsCarbs = carbs * 0.15;
+const pumpkinCarbs = carbs * 0.05;
+
+const riceGrams =
+Math.round((riceCarbs / foods.Rice.carbs) * 100);
+
+const sweetPotatoGrams =
+Math.round((sweetPotatoCarbs / foods.SweetPotato.carbs) * 100);
+
+const oatsGrams =
+Math.round((oatsCarbs / foods.Oats.carbs) * 100);
+
+const pumpkinGrams =
+Math.min(
+    50,
+    Math.round((pumpkinCarbs / foods.Pumpkin.carbs) * 100)
+);
+
+    dietPlan = `
+
+<h4>🌱 Protein Sources</h4>
+
+Soybean: ${soybeanGrams} g/day<br>
+
+Paneer: ${paneerGrams} g/day<br>
+
+Curd: ${curdGrams} g/day<br>
+
+<hr>
+
+<h4>🍚 Carbohydrate Sources</h4>
+
+Rice: ${riceGrams} g/day<br>
+
+Sweet Potato: ${sweetPotatoGrams} g/day<br>
+
+Oats: ${oatsGrams} g/day<br>
+
+Pumpkin: ${pumpkinGrams} g/day<br>
+
+<hr>
+
+<h4>🧀 Fat Sources</h4>
+
+Paneer and Soybean contribute dietary fats.<br>
+
 Psyllium Husk (Optional): 2-5 g/day
-`;
 
+`;
 
 }
 if (dietType === "Commercial Feed") {
