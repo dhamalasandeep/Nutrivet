@@ -564,7 +564,7 @@ if (species.value === "Cat") {
     }
 
 }
-
+ 
 
 let protein;
 let fat;
@@ -589,11 +589,17 @@ else {
     carbs = Math.round((mer * 0.50) / 4);
 
 }
+
+   
+
 if (health === "CKD") {
 
-    protein = Math.round(protein * 0.80);
+    chickenProtein = protein * 0.50;
 
-    carbs = Math.round(carbs * 1.10);
+    eggProtein = protein * 0.40;
+
+    curdProtein = protein * 0.10;
+
 
 }
 
@@ -784,6 +790,25 @@ if (health === "Healthy") {
     clinicalAlert =
     "Continue balanced nutrition, regular exercise and preventive healthcare.";
 }
+let ckdNotes = "";
+
+if (health === "CKD") {
+
+    ckdNotes = `
+
+✓ Moderate high-quality protein
+
+✓ Restricted phosphorus
+
+✓ Increased hydration
+
+✓ Omega-3 supplementation
+
+✓ Regular renal monitoring
+
+`;
+
+}
 let nutritionScore = 100;
 
 if (bcs === "Underweight") {
@@ -876,10 +901,19 @@ Pumpkin: ${Math.round(weight)} g/day<br>
 
 } else {
 
-const chickenProtein = protein * 0.70;
-const eggProtein = protein * 0.25;
-const curdProtein = protein * 0.05;
+let chickenProtein = protein * 0.70;
+let eggProtein = protein * 0.25;
+let curdProtein = protein * 0.05;
 
+if (health === "CKD") {
+
+    chickenProtein = protein * 0.50;
+
+    eggProtein = protein * 0.40;
+
+    curdProtein = protein * 0.10;
+
+}
 const chickenGrams =
 Math.round((chickenProtein / 27) * 100);
 
@@ -972,10 +1006,19 @@ ${Math.min(30, Math.round(weight))} g/day<br>
 
     else {
 
-        const fishProtein = protein * 0.70;
-        const eggProtein = protein * 0.25;
-        const curdProtein = protein * 0.05;
+        let fishProtein = protein * 0.70;
+let eggProtein = protein * 0.25;
+let curdProtein = protein * 0.05;
 
+if (health === "CKD") {
+
+    fishProtein = protein * 0.50;
+
+    eggProtein = protein * 0.40;
+
+    curdProtein = protein * 0.10;
+
+}
         const fishGrams =
         Math.round((fishProtein / 22) * 100);
 
@@ -1066,10 +1109,19 @@ ${Math.min(30, Math.round(weight))} g/day<br>
 
     else {
 
-        const eggProtein = protein * 0.60;
-        const chickenProtein = protein * 0.30;
-        const curdProtein = protein * 0.10;
+        let eggProtein = protein * 0.60;
+let chickenProtein = protein * 0.30;
+let curdProtein = protein * 0.10;
 
+if (health === "CKD") {
+
+    eggProtein = protein * 0.70;
+
+    chickenProtein = protein * 0.20;
+
+    curdProtein = protein * 0.10;
+
+}
         const eggGrams =
         Math.round((eggProtein / 13) * 100);
 
@@ -1138,9 +1190,19 @@ Fish Oil (Optional): 5 ml/day
 }
 if (dietType === "Vegetarian") {
 
-    const soybeanProtein = protein * 0.50;
-    const paneerProtein = protein * 0.35;
-    const curdProtein = protein * 0.15;
+   let soybeanProtein = protein * 0.50;
+let paneerProtein = protein * 0.35;
+let curdProtein = protein * 0.15;
+
+if (health === "CKD") {
+
+    soybeanProtein = protein * 0.35;
+
+    paneerProtein = protein * 0.45;
+
+    curdProtein = protein * 0.20;
+
+}
 
     const soybeanGrams =
     Math.round((soybeanProtein / 18) * 100);
@@ -1297,41 +1359,85 @@ font-weight:bold;
         <p><b>Feeding Frequency:</b> ${feedingFrequency}</p>
         <p><b>Feeding Schedule:</b> ${feedingSchedule}</p>
 
-        <p><b>RER:</b> ${Math.round(rer)} kcal/day</p>
-        <p><b>Energy Requirement:</b> ${Math.round(mer)} kcal/day</p>
-        <p><b>Protein:</b> ${protein} g/day</p>
-        <p><b>Fat:</b> ${fat} g/day</p>
-        <p><b>Carbohydrates:</b> ${carbs} g/day</p>
-        <hr>
+        <details class="report-section">
 
+<summary>📊 Energy & Nutrition</summary>
+
+<p><b>RER:</b> ${Math.round(rer)} kcal/day</p>
+
+<p><b>Energy Requirement:</b> ${Math.round(mer)} kcal/day</p>
+
+<p><b>Protein:</b> ${protein} g/day</p>
+
+<p><b>Fat:</b> ${fat} g/day</p>
+
+<p><b>Carbohydrates:</b> ${carbs} g/day</p>
+
+</details>
 <h3>📚 NRC Nutrition Guidelines</h3>
 
 <p><b>Recommended Protein:</b> ${protein} g/day</p>
 
 <p><b>Recommended Fat:</b> ${fat} g/day</p>
 
-<p><b>NRC Note:</b> ${nrcNote}</p>
-        <p><b>Water:</b> ${water} ml/day</p>
-        <p><b>💧 Hydration Advice:</b> ${hydrationNote}</p>
-        <p><b>Recommendation:</b> ${healthNote}</p>
-        <hr>
+<details class="report-section">
 
-<p><b>sample Diet plan</b></p>
+<summary>📚 NRC Guidelines</summary>
+
+<p><b>Recommended Protein:</b> ${protein} g/day</p>
+
+<p><b>Recommended Fat:</b> ${fat} g/day</p>
+
+<p><b>NRC Note:</b> ${nrcNote}</p>
+
+</details>
+<details class="report-section">
+
+<summary>💧 Hydration</summary>
+
+<p><b>Water:</b> ${water} ml/day</p>
+
+<p><b>Hydration Advice:</b> ${hydrationNote}</p>
+
+</details>
+
+<details class="report-section" open>
+
+<summary>🥗 Diet Plan</summary>
 
 <p>${dietPlan}</p>
+
+</details>
 <p><b>Species Note:</b> ${speciesNote}</p>
 <p><b>Breed Note:</b> ${breedNote}</p>
 <p><b>Breed Weight Assessment:</b> ${breedWeightWarning}</p>
 <hr>
 
-<h3>🩺 Clinical Alert</h3>
+<details class="report-section">
+
+<summary>🩺 Clinical Recommendations</summary>
 
 <p>${clinicalAlert}</p>
+
+</details>
+${health === "CKD" ?
+
+`<hr>
+
+<h3>🩺 CKD Dietary Notes</h3>
+
+<p>${ckdNotes}</p>`
+
+: ""}
 <hr>
 
-<h3>📊 Body Condition Advice</h3>
+<details class="report-section">
+
+<summary>📊 Body Condition Advice</summary>
 
 <p>${bcsNote}</p>
+
+</details>
 
 
 
