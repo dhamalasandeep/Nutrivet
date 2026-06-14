@@ -1715,6 +1715,21 @@ function showPenicillins() {
     <button onclick="showDrug('Amoxicillin + Clavulanate')">
         Amoxicillin + Clavulanate
     </button>
+    <button onclick="showDrug('Amoxicillin + Sulbactam')">
+    Amoxicillin + Sulbactam
+</button>
+
+<button onclick="showDrug('Ampicillin + Sulbactam')">
+    Ampicillin + Sulbactam
+</button>
+
+<button onclick="showDrug('Piperacillin + Tazobactam')">
+    Piperacillin + Tazobactam
+</button>
+
+<button onclick="showDrug('Ticarcillin + Clavulanate')">
+    Ticarcillin + Clavulanate
+</button>
 
     `;
 
@@ -1772,9 +1787,17 @@ function showDrug(drugName) {
 
         <hr>
 
-        <p><b>Uses:</b> Coming Soon</p>
+        <p><b>Uses:</b> ${drug.uses || "Coming Soon"}</p>
 
-        <p><b>Warnings:</b> Coming Soon</p>
+        <p><b>Side Effects:</b> ${drug.sideEffects || "Coming Soon"}</p>
+
+        <p><b>Contraindications:</b> ${drug.contraindications || "Coming Soon"}</p>
+
+        <p><b>Brands:</b> ${(drug.brands && drug.brands.length > 0)
+        ? drug.brands.join(", ")
+        : "Coming Soon"}</p>
+
+        <p><b>Source:</b> ${drug.source || "Coming Soon"}</p>
 
     </div>
 
@@ -1812,6 +1835,17 @@ function showCephalosporins() {
     <button onclick="showDrug('Cefovecin')">
         Cefovecin
     </button>
+    <button onclick="showDrug('Ceftriaxone + Sulbactam')">
+    Ceftriaxone + Sulbactam
+</button>
+
+<button onclick="showDrug('Cefoperazone + Sulbactam')">
+    Cefoperazone + Sulbactam
+</button>
+
+<button onclick="showDrug('Cefepime + Tazobactam')">
+    Cefepime + Tazobactam
+</button>
 
     `;
 
@@ -1837,6 +1871,18 @@ function showAminoglycosides() {
     <button onclick="showDrug('Streptomycin')">
         Streptomycin
     </button>
+    <button onclick="showDrug('Tobramycin')">
+    Tobramycin
+</button>
+
+<button onclick="showDrug('Kanamycin')">
+    Kanamycin
+</button>
+
+<button onclick="showDrug('Paromomycin')">
+    Paromomycin
+</button>
+    
 
     `;
 
@@ -1862,6 +1908,13 @@ function showTetracyclines() {
     <button onclick="showDrug('Minocycline')">
         Minocycline
     </button>
+    <button onclick="showDrug('Demeclocycline')">
+    Demeclocycline
+</button>
+
+<button onclick="showDrug('Chlortetracycline')">
+    Chlortetracycline
+</button>
 
     `;
 
@@ -1891,6 +1944,21 @@ function showFluoroquinolones() {
     <button onclick="showDrug('Ciprofloxacin')">
         Ciprofloxacin
     </button>
+    <button onclick="showDrug('Levofloxacin')">
+    Levofloxacin
+</button>
+
+<button onclick="showDrug('Ofloxacin')">
+    Ofloxacin
+</button>
+
+<button onclick="showDrug('Danofloxacin')">
+    Danofloxacin
+</button>
+
+<button onclick="showDrug('Difloxacin')">
+    Difloxacin
+</button>
 
     `;
 
@@ -1920,6 +1988,17 @@ function showMacrolides() {
     <button onclick="showDrug('Tulathromycin')">
         Tulathromycin
     </button>
+    <button onclick="showDrug('Spiramycin')">
+    Spiramycin
+</button>
+
+<button onclick="showDrug('Tilmicosin')">
+    Tilmicosin
+</button>
+
+<button onclick="showDrug('Gamithromycin')">
+    Gamithromycin
+</button>
 
     `;
 
@@ -2165,6 +2244,26 @@ function showAnthelmintics() {
     <button onclick="showIsoquinolines()">
         Isoquinolines
     </button>
+    <button onclick="showDrug('Levamisole')">
+    Levamisole
+</button>
+
+<button onclick="showDrug('Febantel')">
+    Febantel
+</button>
+
+<button onclick="showDrug('Nitazoxanide')">
+    Nitazoxanide
+</button>
+
+<button onclick="showDrug('Closantel')">
+    Closantel
+</button>
+
+<button onclick="showDrug('Rafoxanide')">
+    Rafoxanide
+</button>
+    
 
     `;
 
@@ -2312,6 +2411,17 @@ function showOtherAnthelmintics() {
     <button onclick="showDrug('Tolfenamic Acid')">
         Tolfenamic Acid
     </button>
+    <button onclick="showDrug('Deracoxib')">
+    Deracoxib
+</button>
+
+<button onclick="showDrug('Mavacoxib')">
+    Mavacoxib
+</button>
+
+<button onclick="showDrug('Grapiprant')">
+    Grapiprant
+</button>
 
     `;
 
@@ -2345,6 +2455,17 @@ function showAnalgesics() {
     <button onclick="showDrug('Fentanyl')">
         Fentanyl
     </button>
+    <button onclick="showDrug('Codeine')">
+    Codeine
+</button>
+
+<button onclick="showDrug('Methadone')">
+    Methadone
+</button>
+
+<button onclick="showDrug('Hydromorphone')">
+    Hydromorphone
+</button>
 
     `;
 
@@ -2386,6 +2507,29 @@ function showSedatives() {
     <button onclick="showDrug('Propofol')">
         Propofol
     </button>
+    <button onclick="showDrug('Atipamezole')">
+    Atipamezole
+</button>
+
+<button onclick="showDrug('Yohimbine')">
+    Yohimbine
+</button>
+
+<button onclick="showDrug('Alfaxalone')">
+    Alfaxalone
+</button>
+
+<button onclick="showDrug('Tiletamine + Zolazepam')">
+    Tiletamine + Zolazepam
+</button>
+
+<button onclick="showDrug('Isoflurane')">
+    Isoflurane
+</button>
+
+<button onclick="showDrug('Sevoflurane')">
+    Sevoflurane
+</button>
 
     `;
 
